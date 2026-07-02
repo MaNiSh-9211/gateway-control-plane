@@ -1,0 +1,10 @@
+services:
+  gateway-control-plane:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      REDIS_HOST: redis
+      CONFIG_DIR: /app/conf.d
+    volumes:
+      - ./conf.d:/app/conf.d:ro
